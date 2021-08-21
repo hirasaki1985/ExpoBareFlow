@@ -4,7 +4,18 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "web": "expo start --web",
-    "start": "react-native start"
+    "start": "react-native start",
+
+    "android:staging": "react-native run-android --variant=stagingdebug",
+    "android:staging-release": "react-native run-android --variant=stagingrelease",
+    "android:dev": "react-native run-android --variant=developmentdebug",
+    "android:dev-release": "react-native run-android --variant=developmentrelease",
+    "android:prod": "react-native run-android --variant=productiondebug",
+    "android:prod-release": "react-native run-android --variant=productionrelease",
+
+    "ios:dev": "cp .env.development .env && react-native run-ios --scheme 'TestAppDevelopment'",
+    "ios:prod": "cp .env.production .env && react-native run-ios --scheme 'TestAppProduction'",
+    "ios:staging": "cp .env.staging .env && react-native run-ios --scheme 'TestAppStaging'"
   },
   "dependencies": {
     "expo": "~42.0.1",
@@ -14,6 +25,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "~0.63.4",
+    "react-native-config": "^1.4.3",
     "react-native-gesture-handler": "~1.10.2",
     "react-native-reanimated": "~2.2.0",
     "react-native-screens": "~3.4.0",
